@@ -131,3 +131,4 @@ dook,dog,foodsniffer,bark&woof&bow-wow
 cj,admin,fullAdmin,zuora-platform&zuora-billing
 vitamin-c,developer,readOnly,zuora-zcloud&zuora-platform&zuora-collect
 whale-shark,developer,readOnly,zuora-zcloud
+instantpot,developer,readOnly,zuora-zcloud&zuora-platform&zuora-billing
