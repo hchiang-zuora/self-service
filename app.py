@@ -64,9 +64,7 @@ def home():
         input4 = request.form.getlist('input4')
         
         github_pr(input1, input2, input3, input4)
-        
-        # flash('Form submitted successfully', 'success')
-    
+       
         return redirect(url_for('home'))
     
     return render_template('index.html')
