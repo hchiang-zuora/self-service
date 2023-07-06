@@ -8,7 +8,7 @@ app.secret_key = secrets.token_hex(16)
 
 def github_pr(upn, eks, aws, orgs):
     #github token authentication
-    GH_Token = "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" ###CHANGE TOKEN
+    GH_Token = ###SECRET TOKEN -- CHANGE TOKEN
     auth = Auth.Token(GH_Token) 
     g = Github(auth=auth) 
 
