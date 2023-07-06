@@ -133,3 +133,4 @@ vitamin-c,developer,readOnly,zuora-zcloud&zuora-platform&zuora-collect
 whale-shark,developer,readOnly,zuora-zcloud
 instantpot,developer,readOnly,zuora-zcloud&zuora-platform&zuora-billing
 pepper,admin,readOnly,zuora-zcloud&zuora-platform&zuora-billing&zuora-collect&zuora-revenue-core&zuora-datascience
+poodle,developer,fullAdmin,zuora-collect
