@@ -32,86 +32,125 @@
         </style>
     {% endif %}
     {% endwith %}
-    <div class="cookies">
-        {% with messages = get_flashed_messages(with_categories=true) %}
-            {% if messages %}
-            <div id="confirmation">
-                {% for category, message in messages %}
-                    {% if category == 'success' %}
-                        <div class="success">{{message}}</div>
-                    {% else %}
-                        <div class="error">{{message}}</div>
-                    {% endif %}
-                {% endfor %}    
-            </div>
-            {% endif %}
-        {% endwith %}
-    </div>
-    <h1>Add New User</h1>
-    <form method="POST">
-        <label for="input1">Employee upn on AzureAD:</label>
-        <input type="text" name="input1" id="input1" placeholder="employee upn" required><br>
-        
-        <label for="input2">EKS role:</label>
-        <select name="input2" id="input2" required>
-            <option value="" selected disabled>select an option</option>
-            <option value="developer">Developer</option>
-            <option value="admin">Admin</option>
-        </select><br>
-        
-        <label for="input3">AWS role:</label>
-        <select name="input3" id="input3" required>
-            <option value="" selected disabled>select an option</option>
-            <option value="readOnly">readOnly</option>
-            <option value="fullAdmin">fullAdmin</option>
-            <option value="networkAdmin">networkAdmin</option>
-        </select><br>
-        
-        <label for="input4">Github Organization(s):</label>
-        <div class="checkbox-row">
-            <div class="checkbox-item">
-              <input type="checkbox" name="input4" value="zuora-zcloud" id="checkbox1">
-              <label for="checkbox1">zuora-zcloud</label>
-            </div>
-            <div class="checkbox-item">
-              <input type="checkbox" name="input4" value="zuora-platform" id="checkbox2">
-              <label for="checkbox2">zuora-platform</label>
-            </div>
-            <div class="checkbox-item">
-              <input type="checkbox" name="input4" value="zuora-billing" id="checkbox3">
-              <label for="checkbox3">zuora-billing</label>
-            </div>
-          </div>
-          
-          <div class="checkbox-row">
-            <div class="checkbox-item">
-              <input type="checkbox" name="input4" value="zuora-collect" id="checkbox4">
-              <label for="checkbox4">zuora-collect</label>
-            </div>
-            <div class="checkbox-item">
-              <input type="checkbox" name="input4" value="zuora-revenue-core" id="checkbox5">
-              <label for="checkbox5">zuora-revenue-core</label>
-            </div>
-            <div class="checkbox-item">
-              <input type="checkbox" name="input4" value="zuora-datascience" id="checkbox6">
-              <label for="checkbox6">zuora-datascience</label>
-            </div>
-          </div>
-          
 
-        <script>
-            function validateCheckbox() {
-                let checkboxes = document.querySelectorAll('input[name="input4"]:checked');
-                if (checkboxes.length === 0) {
-                    alert("Please select at least one Github Organization");
-                    return false;
-                }
-                return true;
-            }
-        </script>
-        
-        <input type="submit" value="Submit" onclick="return validateCheckbox()">
-    </form>
+    <div class="main_form">
+        <div class="cookies">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                <div id="confirmation">
+                    {% for category, message in messages %}
+                        {% if category == 'success' %}
+                            <div class="success">{{message}}</div>
+                        {% else %}
+                            <div class="error">{{message}}</div>
+                        {% endif %}
+                    {% endfor %}    
+                </div>
+                {% endif %}
+            {% endwith %}
+        </div>
+
+        <h1>Add New User</h1>
+        <form method="POST">
+            <label for="input1">Employee upn on AzureAD:</label>
+            <input type="text" name="input1" id="input1" placeholder="employee upn" required><br>
+            
+            <label for="input2">EKS role:</label>
+            <select name="input2" id="input2" required>
+                <option value="" selected disabled>select an option</option>
+                <option value="developer">Developer</option>
+                <option value="admin">Admin</option>
+            </select><br>
+            
+            <label for="input3">AWS role:</label>
+            <select name="input3" id="input3" required>
+                <option value="" selected disabled>select an option</option>
+                <option value="readOnly">readOnly</option>
+                <option value="fullAdmin">fullAdmin</option>
+                <option value="networkAdmin">networkAdmin</option>
+            </select><br>
+            
+            <label for="input4">Github Organization(s):</label>
+            <div class="checkbox-row">
+                <div class="checkbox-item">
+                <input type="checkbox" name="input4" value="zuora-zcloud" id="checkbox1">
+                <label for="checkbox1">zuora-zcloud</label>
+                </div>
+                <div class="checkbox-item">
+                <input type="checkbox" name="input4" value="zuora-platform" id="checkbox2">
+                <label for="checkbox2">zuora-platform</label>
+                </div>
+                <div class="checkbox-item">
+                <input type="checkbox" name="input4" value="zuora-billing" id="checkbox3">
+                <label for="checkbox3">zuora-billing</label>
+                </div>
+            </div>
+            <div class="checkbox-row">
+                <div class="checkbox-item">
+                <input type="checkbox" name="input4" value="zuora-collect" id="checkbox4">
+                <label for="checkbox4">zuora-collect</label>
+                </div>
+                <div class="checkbox-item">
+                <input type="checkbox" name="input4" value="zuora-revenue-core" id="checkbox5">
+                <label for="checkbox5">zuora-revenue-core</label>
+                </div>
+                <div class="checkbox-item">
+                <input type="checkbox" name="input4" value="zuora-datascience" id="checkbox6">
+                <label for="checkbox6">zuora-datascience</label>
+                </div>
+            </div>
+            <input type="submit" value="Save" onclick="return validateCheckbox()">
+        </form>
+
+        </div>
+        <div class="users">
+            {% if users_list %}
+            <ul>
+                {% for user in users_list %}
+                    {% set user_parts = user.split(',') %}
+                    <li>
+                        <div class="user_description">
+                            <div class="description">
+                                <strong>UPN:</strong> {{ user_parts[0] }}<br>
+                                <strong>EKS role:</strong> {{ user_parts[1] }}<br>
+                                <strong>AWS role:</strong> {{ user_parts[2] }}<br>
+                                <strong>Github Org(s):</strong> {{ user_parts[3:]|join(', ') }}<br>
+                            </div>
+                            <div class="user_desc_button">
+                                <button onclick="deleteUser('{{ user }}')">X</button>
+                            </div>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            <button id="pr_button" onclick="createPR()">Submit</button>
+        </div>
     </div>
 </body>
+
+<script>
+    function deleteUser(user){
+        var url = "{{ url_for('delete_user') }}?user=" + encodeURIComponent(user);
+        window.location.href = url;
+    }
+</script>
+
+<script>
+    function createPR(){
+        var url = "{{ url_for('github_pr') }}";
+        window.location.href = url;
+    }
+</script>
+
+<script>
+    function validateCheckbox() {
+        let checkboxes = document.querySelectorAll('input[name="input4"]:checked');
+        if (checkboxes.length === 0) {
+            alert("Please select at least one Github Organization");
+            return false;
+        }
+        return true;
+    }
+</script>
 </html>
