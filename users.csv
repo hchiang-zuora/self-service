@@ -126,3 +126,7 @@ taylor.medford,developer,readOnly,zuora-platform
 awolf,developer,readOnly,zuora-platform
 sathkumar,developer,readOnly,zuora-platform
 twosum,developer,fullAdmin,zuora-zcloud
+whaleShark,developer,readOnly,zuora-zcloud&zuora-collect
+beluga,developer,readOnly,zuora-zcloud&zuora-platform
+nurseShark,developer,readOnly,zuora-zcloud&zuora-collect
+hammerhead,developer,readOnly,zuora-platform
