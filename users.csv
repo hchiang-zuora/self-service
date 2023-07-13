@@ -129,3 +129,7 @@ twosum,developer,fullAdmin,zuora-zcloud
 rosa,developer,readOnly,zuora-zcloud
 lucy,developer,readOnly,zuora-zcloud&zuora-collect
 rebecca,admin,readOnly,zuora-zcloud
+publix,developer,fullAdmin,zuora-zcloud
+oa,admin,readOnly,zuora-collect
+asvv,admin,fullAdmin,zuora-revenue-core
+vfv,admin,fullAdmin,zuora-platform
