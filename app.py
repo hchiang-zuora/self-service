@@ -24,7 +24,8 @@ def github_pr():
         new_branch += f'-{upn}'
 
     #github token authentication
-    GH_Token = ###CHANGE TOKEN
+    GH_Token = ###CHANGE TOKEN 
+    #new changes here!
     auth = Auth.Token(GH_Token) 
     g = Github(auth=auth) 
 
