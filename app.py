@@ -6,7 +6,12 @@ import secrets
 app = Flask(__name__)
 app.secret_key = secrets.token_hex(16)
 
+env_variable = "This is an env variable!!!"
+#i will also add some comments
+
 users_list = []
+
+#hey this is another comment
 
 @app.route('/github_pr', methods=['GET', 'POST'])
 def github_pr():
