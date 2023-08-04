@@ -130,3 +130,6 @@ whaleShark,developer,readOnly,zuora-zcloud&zuora-collect
 beluga,developer,readOnly,zuora-zcloud&zuora-platform
 nurseShark,developer,readOnly,zuora-zcloud&zuora-collect
 hammerhead,developer,readOnly,zuora-platform
+player1,developer,readOnly,zuora-zcloud
+papadfj,developer,readOnly,zuora-zcloud&zuora-collect
+xzcvos,developer,fullAdmin,zuora-platform&zuora-revenue-core&zuora-datascience
