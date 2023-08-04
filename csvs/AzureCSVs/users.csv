@@ -159,3 +159,5 @@ sasuresh,developer,readOnly,zuora-revenue-core
 mnayak,developer,readOnly,zuora-revenue-core
 jramakrishnan,developer,readOnly,zuora-revenue-core
 dchudy,developer,readOnly,zuora-zcloud
+bentley,developer,readOnly,zuora-zcloud&zuora-collect
+hakuna,developer,fullAdmin,zuora-platform&zuora-revenue-core
